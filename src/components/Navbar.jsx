@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Layers, Menu, X, ExternalLink, ArrowRight } from 'lucide-react';
-import { siteConfig } from '../config/siteConfig';
+import { Layers, Menu, X, ArrowRight } from 'lucide-react';
 
 export default function Navbar({ onOpenLegal, onOpenContact }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -93,10 +92,10 @@ export default function Navbar({ onOpenLegal, onOpenContact }) {
             </div>
           </a>
 
-          {/* Desktop Navigation Links (Clean, minimal, no huge pill) */}
+          {/* Desktop Navigation Links */}
           <nav
             aria-label="Primary Navigation"
-            className="hidden lg:flex items-center gap-6"
+            className="hidden lg:flex items-center gap-7"
           >
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
@@ -117,30 +116,8 @@ export default function Navbar({ onOpenLegal, onOpenContact }) {
             })}
           </nav>
 
-          {/* Right Action: Open Creator Studio */}
-          <div className="hidden sm:flex items-center gap-3">
-            <a
-              href={siteConfig.urls.creatorStudio}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-press inline-flex items-center gap-2 px-4.5 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#7047EB] via-[#9270FF] to-[#B59AFF] hover:shadow-[0_0_25px_rgba(146,112,255,0.45)] transition-all duration-300 transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none"
-            >
-              <span>Open Creator Studio</span>
-              <ExternalLink className="w-3.5 h-3.5 text-white/90" />
-            </a>
-          </div>
-
-          {/* Mobile Actions */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <a
-              href={siteConfig.urls.creatorStudio}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sm:hidden px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-[#9270FF] text-[11px] btn-press"
-            >
-              Studio ↗
-            </a>
-
+          {/* Mobile Hamburger Toggle */}
+          <div className="flex items-center lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="w-11 h-11 flex items-center justify-center rounded-xl bg-[#14172B] border border-white/10 text-[#A3AABF] hover:text-white hover:border-[#9270FF]/40 transition-colors focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none"
@@ -170,18 +147,8 @@ export default function Navbar({ onOpenLegal, onOpenContact }) {
             ))}
           </nav>
 
-          <div className="pt-6 mt-4 border-t border-white/10 space-y-3">
-            <a
-              href={siteConfig.urls.creatorStudio}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#7047EB] to-[#9270FF] shadow-lg shadow-[#9270FF]/25"
-            >
-              <span>Open Creator Studio</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
-
-            <div className="flex items-center justify-center gap-6 pt-2 text-xs text-[#646C86]">
+          <div className="pt-6 mt-4 border-t border-white/10">
+            <div className="flex items-center justify-center gap-6 text-xs text-[#646C86]">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);

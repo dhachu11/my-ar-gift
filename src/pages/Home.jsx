@@ -38,7 +38,6 @@ export default function Home() {
         {/* 2. Hero Section */}
         <Hero
           onExplorePricing={() => scrollToSection('pricing')}
-          onSeeHowItWorks={() => scrollToSection('how-it-works')}
         />
 
         {/* 3. Product Demonstration */}
@@ -65,7 +64,6 @@ export default function Home() {
         {/* 11. Emotional Final CTA */}
         <FinalCTA
           onExplorePlans={() => scrollToSection('pricing')}
-          onStartCreating={() => scrollToSection('pricing')}
         />
       </main>
 

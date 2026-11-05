@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   ArrowRight,
-  Play,
   Sparkles,
   Smartphone,
   Monitor,
@@ -9,10 +8,11 @@ import {
   Apple,
   CheckCircle2,
   Volume2,
-  Maximize2
+  Maximize2,
+  Play
 } from 'lucide-react';
 
-export default function Hero({ onExplorePricing, onSeeHowItWorks }) {
+export default function Hero({ onExplorePricing }) {
   return (
     <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Background radial violet atmospheric glows */}
@@ -45,22 +45,14 @@ export default function Hero({ onExplorePricing, onSeeHowItWorks }) {
               Turn ordinary printed photographs into extraordinary AR video memories. A simple scan brings your favorite moments back to life.
             </p>
 
-            {/* Action Buttons */}
+            {/* Action Button: Explore Pricing */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <button
                 onClick={onExplorePricing}
-                className="btn-press w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-[#7047EB] via-[#9270FF] to-[#B59AFF] shadow-[0_0_30px_rgba(146,112,255,0.4)] hover:shadow-[0_0_40px_rgba(146,112,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none"
+                className="btn-press w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-[#7047EB] via-[#9270FF] to-[#B59AFF] shadow-[0_0_30px_rgba(146,112,255,0.4)] hover:shadow-[0_0_40px_rgba(146,112,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none"
               >
                 <span>Explore Pricing</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={onSeeHowItWorks}
-                className="btn-press w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-semibold text-[#A3AABF] hover:text-white bg-[#14172B]/90 hover:bg-[#1A1F38] border border-white/10 hover:border-[#9270FF]/30 transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none"
-              >
-                <Play className="w-4 h-4 text-[#9270FF] fill-[#9270FF]" />
-                <span>See How It Works</span>
               </button>
             </div>
 

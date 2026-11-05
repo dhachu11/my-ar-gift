@@ -1,8 +1,7 @@
 import React from 'react';
-import { ArrowRight, ExternalLink } from 'lucide-react';
-import { siteConfig } from '../config/siteConfig';
+import { ArrowRight } from 'lucide-react';
 
-export default function FinalCTA({ onExplorePlans, onStartCreating }) {
+export default function FinalCTA({ onExplorePlans }) {
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
       {/* Background radial violet glow */}
@@ -63,16 +62,6 @@ export default function FinalCTA({ onExplorePlans, onStartCreating }) {
                   <span>Explore Pricing</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
-
-                <a
-                  href={siteConfig.urls.creatorStudio}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-press w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-white bg-[#19203D] hover:bg-[#222B52] border border-white/10 hover:border-[#9270FF]/40 transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none"
-                >
-                  <span>Start Creating</span>
-                  <ExternalLink className="w-4 h-4 text-[#9270FF]" />
-                </a>
               </div>
             </div>
 
