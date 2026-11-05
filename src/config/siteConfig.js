@@ -12,7 +12,7 @@ export const siteConfig = {
   // URLs & Links (centralized placeholders)
   urls: {
     // Creator Studio Web Application (points to Netlify web app or local dev)
-    creatorStudio: 'https://dainty-profiterole-9d80d4.netlify.app',
+    creatorStudio: 'https://argiftcreator.netlify.app',
     
     // Purchase Links (Placeholders - configured before production launch)
     starterPlanCheckout: '#checkout-starter',

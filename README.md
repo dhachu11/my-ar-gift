@@ -59,7 +59,7 @@ To update checkout links or WhatsApp numbers:
 ```javascript
 export const siteConfig = {
   urls: {
-    creatorStudio: 'https://dainty-profiterole-9d80d4.netlify.app',
+    creatorStudio: 'https://argiftcreator.netlify.app',
     whatsappNumber: '+91 98765 43210',
     whatsappLink: 'https://wa.me/919876543210?text=...',
     supportEmail: 'support@argiftcreator.com',
