@@ -21,7 +21,8 @@ export default function CheckoutModal({ plan, isOpen, onClose }) {
 
   if (!isOpen || !plan) return null;
 
-  const whatsappOrderUrl = `https://wa.me/919876543210?text=Hello!%20I%20would%20like%20to%20order%20the%20${encodeURIComponent(
+  const rawPhone = siteConfig.urls.whatsappNumberRaw || '919080169516';
+  const whatsappOrderUrl = `https://wa.me/${rawPhone}?text=Hello!%20I%20would%20like%20to%20order%20the%20${encodeURIComponent(
     plan.name
   )}%20(${encodeURIComponent(plan.price)})%20for%20AR%20Gift%20Creator.`;
 

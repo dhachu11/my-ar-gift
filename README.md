@@ -60,8 +60,8 @@ To update checkout links or WhatsApp numbers:
 export const siteConfig = {
   urls: {
     creatorStudio: 'https://argiftcreator.netlify.app',
-    whatsappNumber: '+91 98765 43210',
-    whatsappLink: 'https://wa.me/919876543210?text=...',
+    whatsappNumber: '+91 90801 69516',
+    whatsappLink: 'https://wa.me/919080169516?text=...',
     supportEmail: 'support@argiftcreator.com',
   },
   // Pricing tiers, FAQs, etc.

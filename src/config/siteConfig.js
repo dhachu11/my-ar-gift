@@ -19,9 +19,10 @@ export const siteConfig = {
     creatorLicenceCheckout: '#checkout-creator',
     businessAcademyCheckout: '#checkout-academy',
     
-    // WhatsApp Support & Inquiries Placeholder
-    whatsappNumber: '+91 98765 43210',
-    whatsappLink: 'https://wa.me/919876543210?text=Hi,%20I%20am%20interested%20in%20AR%20Gift%20Creator!',
+    // WhatsApp Support & Inquiries
+    whatsappNumber: '+91 90801 69516',
+    whatsappNumberRaw: '919080169516',
+    whatsappLink: 'https://wa.me/919080169516?text=Hi,%20I%20am%20interested%20in%20AR%20Gift%20Creator!',
     
     // Support & Legal
     supportEmail: 'support@argiftcreator.com',
