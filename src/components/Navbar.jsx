@@ -65,7 +65,7 @@ export default function Navbar({ onOpenLegal, onOpenContact }) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#080B18]/90 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.5)] py-3'
+          ? 'bg-[#080B18]/92 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.6)] py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -78,7 +78,7 @@ export default function Navbar({ onOpenLegal, onOpenContact }) {
             onClick={(e) => handleNavClick(e, '#home')}
             aria-label="AR Gift Creator Home"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#9270FF]/15 border border-[#9270FF]/30 flex items-center justify-center text-[#9270FF] group-hover:scale-105 group-hover:bg-[#9270FF]/25 group-hover:border-[#9270FF]/50 transition-all duration-300 shadow-[0_0_20px_rgba(146,112,255,0.2)]">
+            <div className="w-10 h-10 rounded-xl bg-[#9270FF]/15 border border-[#9270FF]/30 flex items-center justify-center text-[#9270FF] group-hover:scale-105 group-hover:bg-[#9270FF]/25 group-hover:border-[#9270FF]/50 transition-all duration-300 shadow-[0_0_20px_rgba(146,112,255,0.25)]">
               <Layers className="w-5 h-5 text-[#9270FF]" />
             </div>
             <div>
@@ -86,17 +86,17 @@ export default function Navbar({ onOpenLegal, onOpenContact }) {
                 <span className="font-extrabold text-base sm:text-lg tracking-tight text-white group-hover:text-[#B59AFF] transition-colors">
                   AR Gift Creator
                 </span>
-                <span className="hidden sm:inline-block text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-[#13172C] text-[#B59AFF] border border-[#9270FF]/30">
+                <span className="hidden sm:inline-block text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-[#14172B] text-[#B59AFF] border border-[#9270FF]/30">
                   WebAR
                 </span>
               </div>
             </div>
           </a>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links (Clean, minimal, no huge pill) */}
           <nav
             aria-label="Primary Navigation"
-            className="hidden lg:flex items-center gap-1 bg-[#0D1122]/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/[0.08] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
+            className="hidden lg:flex items-center gap-6"
           >
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
@@ -105,10 +105,10 @@ export default function Navbar({ onOpenLegal, onOpenContact }) {
                   key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none ${
+                  className={`text-xs font-medium transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none py-1 ${
                     isActive
-                      ? 'text-white bg-[#9270FF]/20 border border-[#9270FF]/40 shadow-[0_0_12px_rgba(146,112,255,0.25)]'
-                      : 'text-[#A3AABF] hover:text-white hover:bg-white/[0.05]'
+                      ? 'text-white font-semibold border-b-2 border-[#9270FF]'
+                      : 'text-[#A3AABF] hover:text-white'
                   }`}
                 >
                   {link.label}
@@ -123,7 +123,7 @@ export default function Navbar({ onOpenLegal, onOpenContact }) {
               href={siteConfig.urls.creatorStudio}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-press inline-flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#7047EB] via-[#9270FF] to-[#B59AFF] hover:shadow-[0_0_25px_rgba(146,112,255,0.45)] transition-all duration-300 transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none"
+              className="btn-press inline-flex items-center gap-2 px-4.5 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#7047EB] via-[#9270FF] to-[#B59AFF] hover:shadow-[0_0_25px_rgba(146,112,255,0.45)] transition-all duration-300 transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none"
             >
               <span>Open Creator Studio</span>
               <ExternalLink className="w-3.5 h-3.5 text-white/90" />
@@ -143,7 +143,7 @@ export default function Navbar({ onOpenLegal, onOpenContact }) {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="w-11 h-11 flex items-center justify-center rounded-xl bg-[#13172C] border border-white/10 text-[#A3AABF] hover:text-white hover:border-[#9270FF]/40 transition-colors focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none"
+              className="w-11 h-11 flex items-center justify-center rounded-xl bg-[#14172B] border border-white/10 text-[#A3AABF] hover:text-white hover:border-[#9270FF]/40 transition-colors focus-visible:ring-2 focus-visible:ring-[#9270FF] focus-visible:outline-none"
               aria-label="Toggle Navigation Menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -162,7 +162,7 @@ export default function Navbar({ onOpenLegal, onOpenContact }) {
                 key={link.id}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium text-[#A3AABF] hover:text-white hover:bg-[#13172C] transition-colors border border-transparent hover:border-white/[0.08]"
+                className="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium text-[#A3AABF] hover:text-white hover:bg-[#14172B] transition-colors border border-transparent hover:border-white/[0.08]"
               >
                 <span>{link.label}</span>
                 <ArrowRight className="w-4 h-4 text-[#9270FF]" />

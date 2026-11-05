@@ -1,105 +1,89 @@
 import React from 'react';
-import { UploadCloud, Film, Cpu, QrCode, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Image as ImageIcon, Play, Layers, QrCode, ArrowRight } from 'lucide-react';
 
 export default function HowItWorks() {
   const steps = [
     {
-      step: '01',
+      num: '01',
       title: 'Upload Your Photo',
-      description: 'Choose the printed photograph you want to bring to life (JPG or PNG).',
-      icon: UploadCloud,
-      tag: 'Target Image',
+      desc: 'Choose the printed photo you want to bring to life.',
+      icon: ImageIcon,
     },
     {
-      step: '02',
+      num: '02',
       title: 'Add Your Video',
-      description: 'Connect a birthday message, wedding clip, anniversary video, or personal memory (MP4).',
-      icon: Film,
-      tag: 'Video Overlay',
+      desc: 'Connect a birthday message, wedding clip, or personal video.',
+      icon: Play,
     },
     {
-      step: '03',
+      num: '03',
       title: 'Generate Your AR Experience',
-      description: 'Our engine compiles the image tracking target and bundles a self-contained WebAR package.',
-      icon: Cpu,
-      tag: 'Local Compiler',
+      desc: 'Compile the image target and export your standalone package.',
+      icon: Layers,
     },
     {
-      step: '04',
+      num: '04',
       title: 'Share the QR Code',
-      description: 'Host your exported package on public HTTPS and print or share the generated QR code.',
+      desc: 'Host the exported files on a public HTTPS link and share the QR code.',
       icon: QrCode,
-      tag: 'Zero-App Delivery',
     },
   ];
 
   return (
-    <section id="how-it-works" className="py-20 md:py-32 relative overflow-hidden">
-      {/* Background radial glow */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#7047EB]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
-
+    <section id="how-it-works" className="py-20 md:py-28 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#9270FF]/10 border border-[#9270FF]/30 text-[#B59AFF] text-xs font-mono">
-            <span>Simple 4-Step Process</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Create Your First AR Gift in{' '}
-            <span className="text-gradient-purple">Simple Steps.</span>
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            From Photograph to Experience.
           </h2>
-          <p className="text-sm sm:text-base text-[#A3AABF] leading-relaxed max-w-xl mx-auto">
-            From physical photograph to interactive augmented reality experience in minutes.
+          <p className="text-sm sm:text-base text-[#A3AABF] leading-relaxed">
+            Create your first AR gift in four simple steps.
           </p>
         </div>
 
-        {/* 4 Cards Grid with Visual Flow */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {steps.map((item, index) => {
+        {/* 4 Connected Step Cards with sleek arrows */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch relative">
+          {steps.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
-                key={item.step}
-                className="relative rounded-2xl bg-[#13172C]/75 hover:bg-[#1A203B]/90 border border-white/[0.08] hover:border-[#9270FF]/40 p-6 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-1 shadow-[0_4px_20px_rgba(0,0,0,0.4)] group"
+                key={item.num}
+                className="relative rounded-2xl bg-[#14172B]/80 hover:bg-[#1A1F38] border border-white/[0.08] hover:border-[#9270FF]/40 p-6 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-1 shadow-[0_4px_25px_rgba(0,0,0,0.5)] group"
               >
-                {/* Step Top Bar: Number + Icon */}
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="text-2xl font-extrabold font-mono text-[#9270FF]/80 group-hover:text-[#B59AFF] transition-colors">
-                      {item.step}
-                    </span>
-                    <div className="w-10 h-10 rounded-xl bg-[#9270FF]/15 border border-[#9270FF]/30 flex items-center justify-center text-[#B59AFF] group-hover:scale-110 group-hover:bg-[#9270FF]/25 transition-all duration-300">
-                      <Icon className="w-5 h-5 text-[#9270FF]" />
-                    </div>
+                  {/* Step Header with Icon */}
+                  <div className="w-12 h-12 rounded-xl bg-[#9270FF]/15 border border-[#9270FF]/30 flex items-center justify-center text-[#B59AFF] mb-6 group-hover:scale-105 group-hover:bg-[#9270FF]/25 transition-all">
+                    <Icon className="w-6 h-6 text-[#9270FF]" />
                   </div>
 
-                  <span className="inline-block text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.06] text-[#A3AABF] mb-3">
-                    {item.tag}
-                  </span>
+                  {/* Number Badge + Title */}
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-6 h-6 rounded-full bg-[#9270FF] text-white flex items-center justify-center font-mono text-xs font-bold shrink-0">
+                      {item.num}
+                    </span>
+                    <h3 className="text-base font-bold text-white group-hover:text-[#D4C4FF] transition-colors leading-snug">
+                      {item.title}
+                    </h3>
+                  </div>
 
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D4C4FF] transition-colors">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-[#A3AABF] leading-relaxed">
-                    {item.description}
+                  <p className="text-xs sm:text-sm text-[#A3AABF] leading-relaxed mt-2">
+                    {item.desc}
                   </p>
                 </div>
 
-                {/* Bottom Card Footer Indicator */}
-                <div className="pt-5 mt-6 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-[#646C86]">
-                  <span>Phase {index + 1} of 4</span>
-                  {index < 3 ? (
-                    <ArrowRight className="w-4 h-4 text-[#9270FF]/70 hidden lg:block group-hover:translate-x-1 transition-transform" />
-                  ) : (
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400/80 hidden lg:block" />
-                  )}
-                </div>
+                {/* Arrow to Next Step on Desktop */}
+                {idx < 3 && (
+                  <div className="hidden lg:block absolute -right-3.5 top-1/2 -translate-y-1/2 z-20 text-[#9270FF]/60 pointer-events-none">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                )}
               </div>
             );
           })}
         </div>
+
       </div>
     </section>
   );

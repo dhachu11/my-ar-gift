@@ -1,131 +1,147 @@
 import React from 'react';
-import { Camera, Image as ImageIcon, Play, Smartphone, ArrowRight, Sparkles, Volume2, Scan } from 'lucide-react';
+import { ArrowRight, Play, Camera, Scan, Sparkles } from 'lucide-react';
 
 export default function ProductDemo() {
-  const steps = [
-    {
-      num: '1',
-      title: 'A Printed Photograph',
-      desc: 'An ordinary physical photograph framed on a desk, wall, or printed on a greeting card or album.',
-      icon: ImageIcon,
-      visualTag: 'Physical Print',
-      accent: 'from-[#241A12] to-[#140E0A]',
-    },
-    {
-      num: '2',
-      title: 'Scan the Photo',
-      desc: 'Point any smartphone camera at the photo. MindAR computer vision instantly recognizes the visual features in milliseconds.',
-      icon: Camera,
-      visualTag: 'Real-time Vision',
-      accent: 'from-[#141A33] to-[#0A0D1A]',
-    },
-    {
-      num: '3',
-      title: 'Watch Your Memory Come Alive',
-      desc: 'The personal video plays directly anchored to the printed image in 3D perspective with synchronized stereo audio.',
-      icon: Play,
-      visualTag: 'Augmented Reality',
-      accent: 'from-[#251142] to-[#100720]',
-    },
-  ];
-
   return (
-    <section className="py-20 md:py-28 bg-[#0D1122]/60 border-y border-white/[0.06] relative overflow-hidden">
-      {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#9270FF]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+    <section className="py-20 md:py-28 bg-[#0E1120]/60 border-y border-white/[0.06] relative overflow-hidden">
+      {/* Background radial violet glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[380px] bg-[#9270FF]/10 rounded-full blur-[150px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Heading */}
+        {/* Section Heading & Explanation */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#9270FF]/10 border border-[#9270FF]/25 text-[#B59AFF] text-xs font-mono">
-            <Sparkles className="w-3.5 h-3.5 text-[#9270FF]" />
-            <span>Computer Vision vs Generic QR</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
-            More Than a Photograph.{' '}
-            <span className="text-gradient-purple">A Memory You Can Experience.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Not Just a Picture.{' '}
+            <span className="font-editorial-italic text-[#B59AFF] font-normal">
+              A Memory That Moves.
+            </span>
           </h2>
           <p className="text-sm sm:text-base text-[#A3AABF] leading-relaxed max-w-2xl mx-auto">
-            Real image-target tracking that recognizes your printed photo directly in the physical world and anchors your video directly onto it.
+            The QR code opens a hosted AR viewer. The viewer then uses image-target tracking to recognize your printed photo and play the video directly on it.
           </p>
         </div>
 
-        {/* 3-Step Horizontal Sequence */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
-          {steps.map((step, idx) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={step.num}
-                className="group relative rounded-2xl bg-[#13172C]/75 hover:bg-[#1A203B]/85 border border-white/[0.08] hover:border-[#9270FF]/40 p-6 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-1 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.6)]"
-              >
-                {/* Step Visual Preview Card */}
-                <div className={`relative w-full aspect-[16/10] rounded-xl mb-6 bg-gradient-to-br ${step.accent} border border-white/[0.08] overflow-hidden flex items-center justify-center shadow-inner`}>
-                  {/* Subtle Grid overlay */}
-                  <div className="absolute inset-0 bg-[radial-gradient(#9270FF_1px,transparent_1px)] [background-size:16px_16px] opacity-15" />
+        {/* 3 Connected Photographic Storytelling Stages */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative">
+          
+          {/* Stage 1: The Printed Memory */}
+          <div className="w-full md:w-1/3 flex flex-col items-center group">
+            <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-[#9270FF]/40 shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 bg-[#14172B]">
+              {/* Actual framed photograph */}
+              <img
+                src="/images/couple-portrait.jpg"
+                alt="The Printed Memory"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono text-[#B59AFF]">
+                Step 01
+              </div>
+            </div>
+            
+            {/* Stage Pill Label */}
+            <div className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#14172B] border border-white/10 text-xs font-semibold text-white shadow-md">
+              <span className="w-5 h-5 rounded-full bg-[#9270FF] text-white flex items-center justify-center font-mono text-[11px] font-bold">
+                1
+              </span>
+              <span>The Printed Memory</span>
+            </div>
+          </div>
+
+          {/* Connector Arrow 1 */}
+          <div className="hidden md:flex items-center justify-center text-[#9270FF]/70">
+            <ArrowRight className="w-6 h-6 animate-pulse" />
+          </div>
+
+          {/* Stage 2: The Recognition */}
+          <div className="w-full md:w-1/3 flex flex-col items-center group">
+            <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border-2 border-[#9270FF]/40 shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 bg-[#090C19]">
+              {/* Photo being scanned through camera */}
+              <img
+                src="/images/couple-portrait.jpg"
+                alt="Smartphone recognizing printed photograph"
+                className="w-full h-full object-cover object-center filter brightness-75 group-hover:scale-105 transition-transform duration-500"
+              />
+              
+              {/* Optical scanning reticle overlay */}
+              <div className="absolute inset-0 flex items-center justify-center p-6">
+                <div className="relative w-full h-full border-2 border-dashed border-[#9270FF] rounded-xl flex items-center justify-center">
+                  <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white" />
+                  <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white" />
+                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white" />
+                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white" />
+                  <div className="absolute inset-x-0 h-0.5 bg-[#9270FF] shadow-[0_0_12px_#9270FF] animate-scan-line" />
                   
-                  {/* Step Illustration Content */}
-                  {idx === 0 && (
-                    <div className="w-[62%] aspect-[4/3] rounded-lg bg-[#2A1E14] border-2 border-[#5E432F] p-1.5 shadow-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300">
-                      <div className="w-full h-full bg-[#0D101D] rounded flex flex-col items-center justify-center text-[#B59AFF]/80 p-2">
-                        <ImageIcon className="w-8 h-8 text-[#9270FF] mb-1" />
-                        <span className="text-[10px] font-mono text-white/60">Printed Print</span>
-                      </div>
-                    </div>
-                  )}
-
-                  {idx === 1 && (
-                    <div className="relative flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                      <div className="w-24 h-36 rounded-2xl bg-[#090C19] border-2 border-[#9270FF]/60 p-1 shadow-xl flex flex-col items-center justify-center relative overflow-hidden">
-                        {/* Scanner reticle & scanline */}
-                        <div className="w-18 h-24 border border-dashed border-[#9270FF]/70 rounded-lg flex items-center justify-center relative">
-                          <Scan className="w-6 h-6 text-[#9270FF]" />
-                          <div className="absolute inset-x-0 h-0.5 bg-[#9270FF] shadow-[0_0_8px_#9270FF] animate-scan-line" />
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {idx === 2 && (
-                    <div className="relative flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                      <div className="w-28 h-38 rounded-2xl bg-gradient-to-tr from-[#7047EB] to-[#B59AFF] p-0.5 shadow-[0_0_25px_rgba(146,112,255,0.35)]">
-                        <div className="w-full h-full bg-[#090C19] rounded-[14px] flex flex-col items-center justify-center relative overflow-hidden p-2">
-                          <div className="w-8 h-8 rounded-full bg-[#9270FF] flex items-center justify-center text-white shadow-lg mb-1">
-                            <Play className="w-4 h-4 fill-white translate-x-0.5" />
-                          </div>
-                          <div className="flex items-center gap-1 text-[9px] text-[#B59AFF] font-mono">
-                            <Volume2 className="w-2.5 h-2.5" />
-                            <span>Playing</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Corner Badge */}
-                  <div className="absolute top-3 left-3 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono text-[#B59AFF]">
-                    {step.visualTag}
+                  <div className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[#9270FF]/50 text-[10px] font-mono text-emerald-400 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                    <span>Optical Match 99.4%</span>
                   </div>
-                </div>
-
-                {/* Step Text Information */}
-                <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="w-7 h-7 rounded-full bg-[#9270FF]/15 border border-[#9270FF]/30 text-[#B59AFF] font-mono font-bold text-xs flex items-center justify-center">
-                      {step.num}
-                    </span>
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#B59AFF] transition-colors">
-                      {step.title}
-                    </h3>
-                  </div>
-                  <p className="text-xs sm:text-sm text-[#A3AABF] leading-relaxed">
-                    {step.desc}
-                  </p>
                 </div>
               </div>
-            );
-          })}
+
+              <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono text-[#B59AFF]">
+                Step 02
+              </div>
+            </div>
+
+            {/* Stage Pill Label */}
+            <div className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#14172B] border border-white/10 text-xs font-semibold text-white shadow-md">
+              <span className="w-5 h-5 rounded-full bg-[#9270FF] text-white flex items-center justify-center font-mono text-[11px] font-bold">
+                2
+              </span>
+              <span>The Recognition</span>
+            </div>
+          </div>
+
+          {/* Connector Arrow 2 */}
+          <div className="hidden md:flex items-center justify-center text-[#9270FF]/70">
+            <ArrowRight className="w-6 h-6 animate-pulse" />
+          </div>
+
+          {/* Stage 3: The Living Memory */}
+          <div className="w-full md:w-1/3 flex flex-col items-center group">
+            <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border-2 border-[#9270FF]/60 shadow-[0_0_30px_rgba(146,112,255,0.25)] transition-all duration-300 transform group-hover:-translate-y-1 bg-[#14172B]">
+              {/* Video overlay playing on photo */}
+              <img
+                src="/images/couple-portrait.jpg"
+                alt="AR Video memory active playback"
+                className="w-full h-full object-cover object-center filter brightness-105 group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-between p-4">
+                <div className="flex justify-between items-center">
+                  <span className="px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-md border border-emerald-400/40 text-[9px] font-mono text-emerald-300">
+                    ● Video Playing 3D
+                  </span>
+                  <span className="text-[10px] font-mono text-white/80">0:45 / 2:30</span>
+                </div>
+                
+                <div className="flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-[#9270FF]/90 backdrop-blur-md flex items-center justify-center text-white shadow-lg">
+                    <Play className="w-4 h-4 fill-white translate-x-0.5" />
+                  </div>
+                </div>
+
+                {/* Progress bar */}
+                <div className="w-full bg-white/20 h-1 rounded-full overflow-hidden">
+                  <div className="bg-gradient-to-r from-[#7047EB] to-[#B59AFF] h-full w-[45%]" />
+                </div>
+              </div>
+
+              <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono text-[#B59AFF]">
+                Step 03
+              </div>
+            </div>
+
+            {/* Stage Pill Label */}
+            <div className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#14172B] border border-[#9270FF]/40 text-xs font-semibold text-white shadow-md">
+              <span className="w-5 h-5 rounded-full bg-[#9270FF] text-white flex items-center justify-center font-mono text-[11px] font-bold">
+                3
+              </span>
+              <span>The Living Memory</span>
+            </div>
+          </div>
+
         </div>
 
       </div>
